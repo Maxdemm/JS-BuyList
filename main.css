@@ -1,13 +1,44 @@
 .product-item {
-	background-color: gray;
+	background-color: rgb(231, 225, 225);
 	display: inline-block;
 	height: 25px;
 	padding: 5px;
 	border-radius: 5px;
 }
 
+body {
+	background-color: rgb(212, 204, 204);
+	font-family: Arial, sans-serif;
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	padding: 40px, 20px;
+}
+
+.main-container {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    max-width: 900px;
+}
+
+.product-list, .stats-card {
+	background-color: white;
+	border-radius: 10px;
+	padding: 20px;
+}
+
+.product-list {
+    flex: 2;
+    min-height: 200px;
+}
+
+.stats {
+    flex: 1;
+}
+
 .amount {
-	background-color: yellow;
+	background-color: orange;
 	border-radius: 10px;
 	
 	display: inline-block;
