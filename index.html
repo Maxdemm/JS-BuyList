@@ -11,13 +11,23 @@
 	<main class="main-container">
 		<section class="product-list">
 			<div class="search-panel">
-				<input type="text" class="search-input" placeholder="Пошук товару">
-				<button class="add-product-btn">Пошук</button>
+				<input type="text" class="search-input" placeholder="Назва товару">
+				<button class="add-product-btn">Додати</button>
 			</div>
 			
 			<div class="item-container">
-				<span class="product-item">Помідори</span>
-				<button class="delete-btn">X</button>
+				<span class="item-name">Помідори</span>
+				
+				<div class="quantity-block">
+					<button class="count-btn minus">−</button>
+					<span class="count-number">2</span>
+					<button class="count-btn plus">+</button>
+				</div>
+
+				<div class="item-actions">
+					<button class="buy-btn">Куплено</button>
+					<button class="delete-btn">×</button>
+				</div>
 			</div>
 		</section>
 
