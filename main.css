@@ -221,3 +221,59 @@ body {
 	text-decoration: line-through;
 }
 
+
+
+
+
+.badge {
+  position: fixed;
+  bottom: 0;
+  left: 20px;
+  width: 140px;
+  background-color: #6a0dad;
+  color: white;
+  border-radius: 12px 12px 0 0;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+  transform: translateY(calc(100% - 44px));
+}
+
+.badge-main-text {
+  font-weight: bold;
+  font-size: 18px;
+  padding: 12px 16px;
+  text-align: center;
+}
+
+.badge-hover-info {
+  padding: 12px 16px;
+  font-size: 13px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.badge:hover {
+  transform: translateY(0);
+  background-color: #4b0082;
+}
+
+@media print {
+  .badge {
+    position: static;
+    transform: none !important;
+    background-color: white !important;
+    color: black !important;
+    border: 2px solid #6a0dad;
+    border-radius: 12px;
+    width: fit-content;
+  }
+
+  .badge-main-text {
+    display: none;
+  }
+
+  .badge-hover-info {
+    display: block;
+  }
+}
