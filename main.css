@@ -72,7 +72,7 @@ body {
 }
 
 .delete-btn {
-    background-color: #e74c3c;
+    background-color: #d11500;
     color: white;
     border: none;
     width: 25px;
@@ -94,11 +94,20 @@ body {
     font-size: 18px;
 }
 
+.item-actions {
+	flex: 1; 
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; 
+    gap: 10px;
+}
+
 .quantity-block {
     display: flex;
     align-items: center;
     gap: 8px;
-    margin: 0 20px;
+	justify-content: center;
+	width: 120px;
 }
 
 .count-btn {
@@ -116,11 +125,11 @@ body {
 }
 
 .minus {
-    background-color: #ff1900;
+    background-color: #d11500;
 }
 
 .plus {
-    background-color: #2ae811;
+    background-color: #17c800;
 }
 
 .count-number {
@@ -150,3 +159,4 @@ body {
 	background-color: #ff0000;
 	opacity: 0.5;
 }
+
