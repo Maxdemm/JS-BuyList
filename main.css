@@ -357,3 +357,17 @@ body {
     justify-content: flex-end; 
     gap: 10px;
 }
+
+@media screen and (max-width: 650px) {
+    .main-container {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .product-list, 
+    .stats {
+        width: 100%;
+        flex: none;
+    }
+}
