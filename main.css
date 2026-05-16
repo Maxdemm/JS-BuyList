@@ -116,12 +116,11 @@ body {
 }
 
 .minus {
-    background-color: #ff0000;
-    opacity: 0.6;
+    background-color: #ff1900;
 }
 
 .plus {
-    background-color: #0ed374;
+    background-color: #2ae811;
 }
 
 .count-number {
@@ -145,4 +144,9 @@ body {
     border-radius: 4px;
     cursor: pointer;
     font-size: 14px;
+}
+
+#count-minus-1 {
+	background-color: #ff0000;
+	opacity: 0.5;
 }
