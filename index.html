@@ -3,8 +3,6 @@
 <head lang="uk">
     <meta charset="UTF-8">
     <title>My Page</title>
-
-
     <link rel="stylesheet" type="text/css" href="main.css" />
 </head>
 <body>
@@ -12,7 +10,7 @@
 		<section class="product-list">
 			<div class="search-panel">
 				<input type="text" class="search-input" placeholder="Назва товару">
-				<button class="add-product-btn">Додати</button>
+				<button class="add-product-btn" data-tooltip="Додати товар">Додати</button>
 			</div>
 			
 			<div class="item-container">
@@ -23,7 +21,7 @@
 				</div>
 
 				<div class="item-actions">
-					<button class="buy-btn">Не куплено</button>
+					<button class="buy-btn" data-tooltip="Позначити як не куплено">Не куплено</button>
 				</div>
 			</div>
 
@@ -31,14 +29,14 @@
 				<span class="item-name">Печиво</span>
 				
 				<div class="quantity-block">
-					<button class="count-btn minus">−</button>
+					<button class="count-btn minus" data-tooltip="Зменшити кількість">−</button>
 					<span class="count-number">2</span>
-					<button class="count-btn plus">+</button>
+					<button class="count-btn plus" data-tooltip="Збільшити кількість">+</button>
 				</div>
 
 				<div class="item-actions">
-					<button class="buy-btn">Куплено</button>
-					<button class="delete-btn">×</button>
+					<button class="buy-btn" data-tooltip="Позначити як куплено">Куплено</button>
+					<button class="delete-btn" data-tooltip="Видалити товар">×</button>
 				</div>
 			</div>
 
@@ -46,14 +44,14 @@
 				<span class="item-name">Сир</span>
 				
 				<div class="quantity-block">
-					<button class="count-btn minus" id="count-minus-1">−</button>
+					<button class="count-btn minus" id="count-minus-1" data-tooltip="Зменшити кількість">−</button>
 					<span class="count-number">1</span>
-					<button class="count-btn plus">+</button>
+					<button class="count-btn plus" data-tooltip="Збільшити кількість">+</button>
 				</div>
 
 				<div class="item-actions">
-					<button class="buy-btn">Куплено</button>
-					<button class="delete-btn">×</button>
+					<button class="buy-btn" data-tooltip="Позначити як куплено">Куплено</button>
+					<button class="delete-btn" data-tooltip="Видалити товар">×</button>
 				</div>
 			</div>
 		</section>
