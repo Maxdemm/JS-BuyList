@@ -31,6 +31,11 @@ function render() {
                     </div>
                 </div>
             `;
+            boughtStatsContainer.insertAdjacentHTML('beforeend', `
+                <span class="product-stat-item bought-badge">
+                    ${product.name} <span class="amount">${product.amount}</span>
+                </span>
+            `);
         } else {
             itemHtml = `
                 <div class="item-container" data-id="${product.id}">
@@ -46,6 +51,11 @@ function render() {
                     </div>
                 </div>
             `;
+            leftStatsContainer.insertAdjacentHTML('beforeend', `
+                <span class="product-stat-item left-badge">
+                    ${product.name} <span class="amount">${product.amount}</span>
+                </span>
+            `);
         }
 
         productsContainer.insertAdjacentHTML("beforeend", itemHtml);
