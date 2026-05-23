@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>My Page</title>
     <link rel="stylesheet" type="text/css" href="main.css" />
+	<script src="main.js" defer></script>
 </head>
 <body>
 	<main class="main-container">
@@ -12,76 +13,22 @@
 				<input type="text" class="search-input" placeholder="Назва товару">
 				<button class="add-product-btn" data-tooltip="Додати товар">Додати</button>
 			</div>
-			
-			<div class="item-container">
-				<span class="item-name" id="bought-name">Помідори</span>
-				
-				<div class="quantity-block">
-					<span class="count-number">2</span>
-				</div>
-
-				<div class="item-actions">
-					<button class="buy-btn" data-tooltip="Позначити як не куплено">Не куплено</button>
-				</div>
-			</div>
-
-			<div class="item-container">
-				<span class="item-name">Печиво</span>
-				
-				<div class="quantity-block">
-					<button class="count-btn minus" data-tooltip="Зменшити кількість">−</button>
-					<span class="count-number">2</span>
-					<button class="count-btn plus" data-tooltip="Збільшити кількість">+</button>
-				</div>
-
-				<div class="item-actions">
-					<button class="buy-btn" data-tooltip="Позначити як куплено">Куплено</button>
-					<button class="delete-btn" data-tooltip="Видалити товар">×</button>
-				</div>
-			</div>
-
-			<div class="item-container">
-				<span class="item-name">
-        			<input type="text" class="item-input-edit" value="Сир" data-tooltip="Редагувати назву товару">
-    			</span>
-				
-				<div class="quantity-block">
-					<button class="count-btn minus" id="count-minus-1" data-tooltip="Зменшити кількість">−</button>
-					<span class="count-number">1</span>
-					<button class="count-btn plus" data-tooltip="Збільшити кількість">+</button>
-				</div>
-
-				<div class="item-actions">
-					<button class="buy-btn" data-tooltip="Позначити як куплено">Куплено</button>
-					<button class="delete-btn" data-tooltip="Видалити товар">×</button>
-				</div>
-			</div>
+			<div class="products-container" id="products-container"></div>
 		</section>
 
 		<aside class="stats">
-    <div class="stats-card">
-        <h3>Залишилося</h3>
-		<hr class="stats-divider">
-        <div class="stats-group">
-            <span class="product-stat-item">
-                Печиво <span class="amount">2</span>
-            </span>
-            <span class="product-stat-item">
-                Сир <span class="amount">1</span>
-            </span>
-        </div>
-        
-        <hr class="stats-divider">
-        
-		<h3>Куплено</h3>
-		<hr class="stats-divider">
-        <div class="stats-group">
-            <span class="product-stat-item bought-badge">
-                Помідори <span class="amount">2</span>
-            </span>
-        </div>
-    </div>
-</aside>	
+			<div class="stats-card">
+				<h3>Залишилося</h3>
+				<hr class="stats-divider">
+				<div class="stats-group" id="left-stats-container"></div>
+				
+				<hr class="stats-divider">
+				
+				<h3>Куплено</h3>
+				<hr class="stats-divider">
+				<div class="stats-group" id="bought-stats-container"></div>
+			</div>
+		</aside>	
 
 <div class="badge">
 	<div class="badge-main-text">Buy List</div>
