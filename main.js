@@ -19,7 +19,7 @@ function render() {
     products.forEach(product => {
         let itemHtml = '';
 
-         if (product.isBought) {
+        if (product.isBought) {
             itemHtml = `
                 <div class="item-container" data-id="${product.id}">
                     <span class="item-name" id="bought-name">${product.name}</span>
@@ -39,15 +39,19 @@ function render() {
         } else {
             let nameContent = '';
             if (product.isEditing) {
-                nameContent = `<input type="text" class="item-input-edit" value="${product.name}">`;
+                nameContent = `
+                    <span class="item-name">
+                        <input type="text" class="item-input-edit" value="${product.name}">
+                    </span>`;
             } else {
                 nameContent = `<span class="item-name">${product.name}</span>`;
             }
+            const minusClass = product.amount === 1 ? "count-btn minus count-minus-1" : "count-btn minus";
             itemHtml = `
                 <div class="item-container" data-id="${product.id}">
                     ${nameContent}
                     <div class="quantity-block">
-                        <button class="count-btn minus" data-tooltip="Зменшити кількість">−</button>
+                        <button class="${minusClass}" data-tooltip="Зменшити кількість">−</button>
                         <span class="count-number">${product.amount}</span>
                         <button class="count-btn plus" data-tooltip="Збільшити кількість">+</button>
                     </div>
@@ -66,7 +70,6 @@ function render() {
 
         productsContainer.insertAdjacentHTML("beforeend", itemHtml);
     });
-
 }
 
 render();
@@ -136,3 +139,20 @@ productsContainer.addEventListener("click", (event) => {
         }
     }
 });
+
+productsContainer.addEventListener("blur", (event) => {
+    if (event.target.classList.contains("item-input-edit")) {
+        const itemContainer = event.target.closest(".item-container");
+        const productId = Number(itemContainer.dataset.id);
+        const product = products.find(p => p.id === productId);
+        
+        if (product) {
+            const newName = event.target.value.trim();
+            if (newName) {
+                product.name = newName;
+            }
+            product.isEditing = false; 
+            render(); 
+        }
+    }
+}, true);

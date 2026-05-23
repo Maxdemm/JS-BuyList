@@ -155,7 +155,7 @@ body {
     font-size: 14px;
 }
 
-#count-minus-1 {
+.count-minus-1 {
 	background-color: #ff0000;
 	opacity: 0.5;
 }
