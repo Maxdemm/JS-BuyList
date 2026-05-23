@@ -26,6 +26,7 @@ body {
 	background-color: white;
 	border-radius: 10px;
 	padding: 20px;
+    box-shadow: 3px 3px 5px 0 #7b7575;
 }
 
 .product-list {
@@ -39,7 +40,6 @@ body {
 
 .search-panel {
 	display: flex;
-	gap: 10px;
 	margin-bottom: 10px;
 	padding-bottom: 20px;
 	border-bottom: 1px solid rgb(231, 225, 225);
@@ -49,7 +49,7 @@ body {
     flex: 1;
     padding: 10px;
     border: 1px solid #d8d0d0;
-    border-radius: 10px 0 0 10px;
+    border-radius: 5px 0 0 5px;
 }
 
 .add-product-btn {
@@ -60,6 +60,7 @@ body {
     border-radius: 0 4px 4px 0;
     cursor: pointer;
     box-shadow: 0 4px 0 0 #1c5fa0;
+    margin-bottom: 4px;
 }
 
 .add-product-btn:active {

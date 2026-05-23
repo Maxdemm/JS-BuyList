@@ -1,6 +1,6 @@
 let products = [
     {id: 1, name: "Помідори", amount: 2, isBought: true, isEditing: false},
-    {id: 2, name: "Печиво", amount: 2, isBought: false, isEditing: false},
+    {id: 2, name: "Печиво", amount: 200, isBought: false, isEditing: false},
     {id: 3, name: "Сир", amount: 1, isBought: false, isEditing: false}
 ]
 
