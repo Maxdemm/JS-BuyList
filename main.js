@@ -37,9 +37,15 @@ function render() {
                 </span>
             `);
         } else {
+            let nameContent = '';
+            if (product.isEditing) {
+                nameContent = `<input type="text" class="item-input-edit" value="${product.name}">`;
+            } else {
+                nameContent = `<span class="item-name">${product.name}</span>`;
+            }
             itemHtml = `
                 <div class="item-container" data-id="${product.id}">
-                    <span class="item-name">${product.name}</span>
+                    ${nameContent}
                     <div class="quantity-block">
                         <button class="count-btn minus" data-tooltip="Зменшити кількість">−</button>
                         <span class="count-number">${product.amount}</span>
@@ -65,7 +71,7 @@ function render() {
 
 render();
 
-addProductBtn.addEventListener("click", () => {
+function handleAddProduct() {
     const newProductName = searchInput.value.trim();
 
     if(newProductName) {
@@ -79,6 +85,15 @@ addProductBtn.addEventListener("click", () => {
         searchInput.value = "";
         render();
     }
+    searchInput.focus();
+}
+addProductBtn.addEventListener("click", handleAddProduct);
+searchInput.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+        handleAddProduct();
+        render();
+        return;
+    }
 });
 
 productsContainer.addEventListener("click", (event) => {
@@ -90,18 +105,34 @@ productsContainer.addEventListener("click", (event) => {
 
     if (event.target.classList.contains("delete-btn")) {
         products = products.filter(product => product.id !== productId);
+        render();
+        return;
     }
     if (event.target.classList.contains("buy-btn")) {
         const product = products.find(p => p.id === productId);
         if (product) product.isBought = !product.isBought;
+        render();
+        return;
     }
     if (event.target.classList.contains("plus")) {
         const product = products.find(p => p.id === productId);
         if (product) product.amount++;
+        render();
+        return;
     }
     if (event.target.classList.contains("minus")) {
         const product = products.find(p => p.id === productId);
         if (product && product.amount > 1) product.amount--; 
+        render();
+        return;
     }
-    render();
+    if (event.target.classList.contains("item-name")) {
+        const product = products.find(p => p.id === productId);
+        if (product) {
+            product.isEditing = true;
+            render();
+            const input = productsContainer.querySelector(`[data-id="${productId}"] .item-input-edit`);
+            if (input) input.focus();
+        }
+    }
 });
