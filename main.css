@@ -219,7 +219,7 @@ body {
     text-decoration: line-through;
 }
 
-.amount {
+.bought-item-amount {
     background-color: #ff9800;
     color: white;
     font-size: 12px;
@@ -230,6 +230,9 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+
+    text-decoration: line-through;
+    text-decoration-color: white;
 }
 
 .stats-divider {
@@ -237,12 +240,6 @@ body {
     border-top: 1px solid #f5f5f5;
     margin: 20px 0;
 }
-
-#bought-name {
-	text-decoration: line-through;
-}
-
-
 
 
 

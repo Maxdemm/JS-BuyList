@@ -37,7 +37,8 @@ function render() {
             `;
             boughtStatsContainer.insertAdjacentHTML('beforeend', `
                 <span class="product-stat-item bought-badge">
-                    ${product.name} <span class="amount">${product.amount}</span>
+                    <span class="bought-item-name">${product.name}</span>
+                    <span class="bought-item-amount">${product.amount}</span>
                 </span>
             `);
         } else {
