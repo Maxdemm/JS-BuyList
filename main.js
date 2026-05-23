@@ -1,8 +1,10 @@
-let products = [
+const savedData = localStorage.getItem('shoppingCart');
+
+let products = savedData ? JSON.parse(savedData) : [
     {id: 1, name: "Помідори", amount: 2, isBought: true, isEditing: false},
     {id: 2, name: "Печиво", amount: 200, isBought: false, isEditing: false},
     {id: 3, name: "Сир", amount: 1, isBought: false, isEditing: false}
-]
+];
 
 const productsContainer = document.getElementById("products-container");
 const leftStatsContainer = document.getElementById("left-stats-container");
@@ -12,6 +14,8 @@ const searchInput = document.querySelector(".search-input");
 const addProductBtn = document.querySelector(".add-product-btn");
 
 function render() {
+    localStorage.setItem('shoppingCart', JSON.stringify(products));
+
     productsContainer.innerHTML = "";
     leftStatsContainer.innerHTML = "";
     boughtStatsContainer.innerHTML = "";
