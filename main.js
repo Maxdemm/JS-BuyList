@@ -52,7 +52,7 @@ function render() {
                 </div>
             `;
             leftStatsContainer.insertAdjacentHTML('beforeend', `
-                <span class="product-stat-item left-badge">
+                <span class="product-stat-item">
                     ${product.name} <span class="amount">${product.amount}</span>
                 </span>
             `);
@@ -64,3 +64,37 @@ function render() {
 }
 
 render();
+
+addProductBtn.addEventListener("click", () => {
+    const newProductName = searchInput.value.trim();
+
+    if(newProductName) {
+        products.push({
+            id: Date.now(),
+            name: newProductName,
+            amount: 1,
+            isBought: false,
+            isEditing: false
+        });
+        searchInput.value = "";
+        render();
+    }
+});
+
+productsContainer.addEventListener("click", (event) => {
+    const itemContainer = event.target.closest(".item-container");
+    if (!itemContainer) 
+        return;
+    
+    const productId = Number(itemContainer.dataset.id);
+
+    if (event.target.classList.contains("delete-btn")) {
+        products = products.filter(product => product.id !== productId);
+    }
+    if (event.target.classList.contains("buy-btn")) {
+        const product = products.find(p => p.id === productId);
+        if (product) product.isBought = !product.isBought;
+    }
+
+    render();
+});
