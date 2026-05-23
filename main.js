@@ -95,6 +95,13 @@ productsContainer.addEventListener("click", (event) => {
         const product = products.find(p => p.id === productId);
         if (product) product.isBought = !product.isBought;
     }
-
+    if (event.target.classList.contains("plus")) {
+        const product = products.find(p => p.id === productId);
+        if (product) product.amount++;
+    }
+    if (event.target.classList.contains("minus")) {
+        const product = products.find(p => p.id === productId);
+        if (product && product.amount > 1) product.amount--; 
+    }
     render();
 });
