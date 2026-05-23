@@ -37,16 +37,6 @@ body {
     flex: 1;
 }
 
-.amount {
-	background-color: orange;
-	border-radius: 10px;
-	color: white;
-	display: inline-block;
-	height: 20px;
-	width: 20px;
-	text-align: center;
-}
-
 .search-panel {
 	display: flex;
 	gap: 10px;
@@ -69,6 +59,12 @@ body {
     padding: 10px 20px;
     border-radius: 0 4px 4px 0;
     cursor: pointer;
+    box-shadow: 0 4px 0 0 #1c5fa0;
+}
+
+.add-product-btn:active {
+    box-shadow: 0 2px 0 0 #1c5fa0;
+    transform: translateY(2px);
 }
 
 .delete-btn {
@@ -79,6 +75,12 @@ body {
     height: 25px;
     border-radius: 20%;
     cursor: pointer;
+    box-shadow: 0 3px 0 0 #a00b00;
+}
+
+.delete-btn:active {
+    box-shadow: 0 1px 0 0 #a00b00;
+    transform: translateY(2px);
 }
 
 .item-container {
@@ -126,17 +128,29 @@ body {
 
 .minus {
     background-color: #d11500;
+    box-shadow: 0 3px 0 0 #a00b00;
 }
 
 .plus {
     background-color: #17c800;
+    box-shadow: 0 3px 0 0 #129301;
+}
+
+.count-btn.plus:active {
+    box-shadow: 0 1px 0 0 #129301;
+    transform: translateY(2px);
+}
+
+.count-btn.minus:active {
+    box-shadow: 0 1px 0 0 #a00b00;
+    transform: translateY(2px);
 }
 
 .count-number {
     background-color: #f0eeee;
     padding: 4px 12px;
     border-radius: 4px;
-    min-width: 30px;
+    min-width: 10px;
     text-align: center;
 }
 
@@ -153,6 +167,12 @@ body {
     border-radius: 4px;
     cursor: pointer;
     font-size: 14px;
+    box-shadow: 0 3px 0 0 #c1c1c1;
+}
+
+.buy-btn:active {
+    box-shadow: 0 1px 0 0 #c1c1c1;
+    transform: translateY(1px);
 }
 
 .count-minus-1 {
@@ -230,7 +250,7 @@ body {
 	bottom: 0;
 	left: 20px;
     width: 140px;
-    background-color: #6a0dad;
+    background-color: #7f1cc6;
 	color: white;
 	border-radius: 12px 12px 0 0;
 	overflow: hidden;
@@ -255,7 +275,7 @@ body {
 
 .badge:hover {
 	transform: translateY(0);
-	background-color: #4b0082;
+	background-color: #0e29c0;
 }
 
 @media print {
